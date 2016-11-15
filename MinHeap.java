@@ -4,7 +4,7 @@ public class MinHeap {
     
     
     public MinHeap(int input[]) throws Exception{
-		n = input.length;
+	n = input.length;
         arr = new int[n];
         for(int i=0;i<input.length;i++){
             arr[i] = input[i];
@@ -106,14 +106,14 @@ public class MinHeap {
         //perform heapify on 0th index. Check the status as well.
         if(heapify(0)){
 			
-			//if success, reduce the heap size by 1 and return the value.
-			n-=1;
-			return result;
-		} 
+		//if success, reduce the heap size by 1 and return the value.
+		n-=1;
+		return result;
+	} 
         
         
         //if there is some problem during minHeapify, revert the changes.
-		arr[n-1] = arr[0];
+	arr[n-1] = arr[0];
         arr[0] = result;
         return -1;
         
@@ -128,17 +128,17 @@ public class MinHeap {
         //place element at the last position.
         arr[n] = x;
 		
-		//increase the heap size by 1.
-		n+=1;
+	//increase the heap size by 1.
+	n+=1;
         
         //If changePriority() fails, revert the changes.
         if(!changePriority(n-1)){
 			
-			n--;
-			return false;
-		}
+		n--;
+		return false;
+	}
 		
-		return true;
+	return true;
         
         
     }
